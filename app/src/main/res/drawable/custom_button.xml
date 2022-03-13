@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    Developed by : Dev Nakum(20CE059) -->
+<!--    To create custom button -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#CC4444"></solid>  <!-- give to color -->
+    <corners android:radius="23dp"></corners>  <!-- give to radius -->
+</shape>

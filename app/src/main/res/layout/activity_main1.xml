@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Developed by : Dev Nakum(20CE059)  //*Design of Vaccination center page -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity1"
+    android:background="@drawable/backg1">
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/img" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/recyclerView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="188dp"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/pinLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtv_pinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Pincode of your area"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_enterPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/round_corner"
+                android:hint="Enter Here"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textSize="20sp" />
+
+
+            <!--            <Button-->
+            <!--                android:id="@+id/getResult"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="30dp"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:layout_marginEnd="30dp"-->
+            <!--                android:background="@drawable/custom_button"-->
+            <!--                android:text="Search"-->
+            <!--                android:textColor="#FFFFFF"-->
+            <!--                android:textStyle="bold" />-->
+            <Button
+                android:id="@+id/btn_getResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/custom_button"
+                android:text="Search"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"></Button>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+   <HorizontalScrollView
+       android:id="@+id/lyt_filter"
+       android:layout_below="@+id/pinLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pinLayout"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="4dp">
+
+            <Button
+                android:id="@+id/btn_ageBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Age"
+                app:layout_constraintBottom_toTopOf="@+id/btn_CovaxinBtn"
+                app:layout_constraintEnd_toStartOf="@+id/btn_feesBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_feesBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Fee"
+                app:layout_constraintBottom_toTopOf="@+id/btn_CovaxinBtn"
+                app:layout_constraintEnd_toStartOf="@+id/btn_timeBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_ageBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_timeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Time"
+                app:layout_constraintBottom_toTopOf="@+id/btn_availableBtn"
+                app:layout_constraintEnd_toStartOf="@+id/btn_nullBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_feesBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_CovaxinBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Covaxin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_CovishieldBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btn_CovishieldBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Covishield"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_availableBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_CovaxinBtn"
+                app:layout_constraintTop_toBottomOf="@+id/btn_timeBtn"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_availableBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Availability"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_CovishieldBtn"
+                app:layout_constraintTop_toBottomOf="@+id/btn_nullBtn" />
+
+            <Button
+                android:id="@+id/btn_nullBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/custom_button"
+                android:onClick="Sort"
+                android:text="Clear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_timeBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+   </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_filter"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txt_errorMes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vaccination center is not available"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lyt_filter"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp" />
+
+
+</RelativeLayout>
